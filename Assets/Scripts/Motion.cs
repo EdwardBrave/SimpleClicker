@@ -11,14 +11,7 @@ public class Motion : MonoBehaviour
     private IMoveType selected;
     private float counter = 0;
 
-    private void Awake()
-    {
-        types.Add(new ForwardMove());
-        types.Add(new DiagonalyMove());
-        types.Add(new DeadMove());
-    }
-
-    private void Start()
+    public void Start()
     {
         if (types.Count > 0)
             selected = types[0];
