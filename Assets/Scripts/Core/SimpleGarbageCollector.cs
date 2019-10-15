@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Collect and remove out of camera view objects and disables units for optimization.
 public class SimpleGarbageCollector : MonoBehaviour, IMapGarbageCollector
 {
     public float update;

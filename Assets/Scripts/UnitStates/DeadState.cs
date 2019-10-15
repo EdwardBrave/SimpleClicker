@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Unit dead state logic.
 public class DeadState : BaseState
 {
+    // Set motion to DeadMove which hides unit under floor.
     protected override void OnContext()
     {
         var motion = context.GetComponent<Motion>();

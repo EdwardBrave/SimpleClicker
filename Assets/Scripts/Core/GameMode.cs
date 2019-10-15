@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Specific set of game rules. Control game process, count events,
+// check rules and game end conditions. 
 public class GameMode : BaseGameMode
 {
     public GameObject floor;
@@ -27,7 +29,6 @@ public class GameMode : BaseGameMode
     void Start()
     {
         units = GameManager.instance.map.GetUnits();
-
         Vector3 floorPosition = floor.transform.position;
         Vector3 floorScale = floor.transform.localScale * 5;
         edgeCoords[0] = new Vector3(floorPosition.x - floorScale.x, floorPosition.y, floorPosition.z - floorScale.z);
@@ -54,7 +55,7 @@ public class GameMode : BaseGameMode
             return;
         }
 
-        foreach (var unit in units)
+        foreach(var unit in units)
         {
             Vector3 unitPosition = unit.transform.position;
             

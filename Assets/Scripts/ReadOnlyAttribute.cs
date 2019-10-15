@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 public class ReadOnlyAttribute : PropertyAttribute { }
 
 #if UNITY_EDITOR
+// Allows declare a public visible read only properties in unity editor.
 [UnityEditor.CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
 public class ReadOnlyAttributeDrawer : UnityEditor.PropertyDrawer
 {

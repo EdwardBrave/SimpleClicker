@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// The main logic class of game. Starts, Pause, Stop and control game process.
+// Also reacts on interface events.
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public IMapManager map;
-
     public BaseGameMode mode;
-
     public GameObject userInterface;
     public GameObject scorePanel;
     public Text scoreField;

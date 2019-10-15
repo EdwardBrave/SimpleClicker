@@ -2,6 +2,7 @@
 
 public class ATypeBuiler : IUnitBuilder
 {
+    // Builds the red enemy unit which can move only forward.
     public void BuildUnit(GameObject unit, MapManager constructor)
     {
         unit.AddComponent<MaterialPainter>().Red();

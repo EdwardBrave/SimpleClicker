@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
+// Draw current object material in colors from the pallet.
 public class MaterialPainter : MonoBehaviour
 {
     [ContextMenuItem("Refresh", "Refresh"),
@@ -41,6 +42,7 @@ public class MaterialPainter : MonoBehaviour
         }
     }
 
+    // Draw current object material in colors from the pallet.
     void RefreshMaterial()
     {
         Renderer rend = GetComponent<Renderer>();

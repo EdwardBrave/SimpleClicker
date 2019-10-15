@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+// Unit run state logic
 public class RunState : BaseState
 {
+    // "Killing" self on mouse click and update game counters
     public override void OnClick()
     {
         if (GameManager.instance.mode is GameMode mode)

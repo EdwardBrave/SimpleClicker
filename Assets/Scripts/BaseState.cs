@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Abstraction for different flexible states and it switching.
 public abstract class BaseState
 {
     protected StateMachine context;
@@ -12,10 +13,7 @@ public abstract class BaseState
         OnContext();
     }
 
-    protected virtual void OnContext()
-    {
-
-    }
+    protected virtual void OnContext() {  }
 
     public abstract void Update();
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// Realizes a flexible switching and executing between different states (behaviours)
 public class StateMachine : MonoBehaviour, IPointerClickHandler
 {
     private BaseState state;
@@ -29,14 +30,12 @@ public class StateMachine : MonoBehaviour, IPointerClickHandler
         return null;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         if (state == null)
             SetState(new RunState());
     }
 
-    // Update is called once per frame
     void Update()
     {
         state.Update();

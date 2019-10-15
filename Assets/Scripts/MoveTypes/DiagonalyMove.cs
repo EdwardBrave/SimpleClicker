@@ -6,6 +6,7 @@ public class DiagonalyMove : IMoveType
     private float counter = 2.0F;
     private float changeTime = Random.Range(0.0F, 4.0F);
 
+    //Motion diagonally (to left/right down corner)
     public void Move(float speed, Transform transform)
     {
         counter += Time.deltaTime;

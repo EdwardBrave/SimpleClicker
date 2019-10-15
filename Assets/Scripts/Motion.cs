@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Component for motion logic types switching and executing
 public class Motion : MonoBehaviour
 {
     public float speed = 1.0F;

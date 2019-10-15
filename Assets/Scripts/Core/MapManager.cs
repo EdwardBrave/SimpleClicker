@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Specific Map Manager and units generator. 
+// Control generation process (also collect different unit builders)
+// and stores all units.
 public class MapManager : MonoBehaviour, IMapManager
 {
 

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Interface for different Map Managers (generators) creation 
+// and connection to GameManager.
 public interface IMapManager
 {
     List<GameObject> GetUnits();
