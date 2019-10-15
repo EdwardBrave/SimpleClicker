@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        map.StartGeneration();
     }
 
     // Update is called once per frame

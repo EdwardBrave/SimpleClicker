@@ -4,30 +4,49 @@ using UnityEngine;
 
 public class SimpleGarbageCollector : MonoBehaviour, IMapGarbageCollector
 {
-    public void Collect(List<GameObject> objects)
-    {
-        throw new System.NotImplementedException();
-    }
+    public float update;
+    public Transform floor;
+
+    private float updateCounter;
+    private List<GameObject> objects;
+    private bool isActive = false;
 
     public void StartCollecting(List<GameObject> objects)
     {
-        throw new System.NotImplementedException();
+        this.objects = objects;
+        isActive = true;
+        updateCounter = update;
+    }
+
+    void Update()
+    {
+        if (!isActive)
+            return;
+        updateCounter += Time.deltaTime;
+        if (updateCounter >= update)
+        {
+            updateCounter -= update;
+            Collect(objects);
+        } 
+    }
+
+    public void Collect(List<GameObject> objects)
+    {
+        float yPos = floor.position.y;
+        for (int i = objects.Count-1; i >= 0; --i)
+        {
+            var obj = objects[i];
+            if (obj.transform.position.y + 0.5F < yPos)
+            {
+                objects.Remove(obj);
+                Destroy(obj.gameObject);
+            }
+        }
     }
 
     public void Stop()
     {
-        throw new System.NotImplementedException();
+        isActive = false;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

@@ -39,6 +39,7 @@ public class MapManager : MonoBehaviour, IMapManager
     public void StartGeneration()
     {
         isActive = true;
+        mapGC?.StartCollecting(units);
     }
     
     void Update()
