@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class StateMachine : MonoBehaviour, IPointerClickHandler
 {
-    public bool clickable;
     private BaseState state;
     public UnitTypes unitType;
 
@@ -25,13 +24,16 @@ public class StateMachine : MonoBehaviour, IPointerClickHandler
 
     public Type GetStateType()
     {
-        return state.GetType();
+        if (state != null)
+            return state.GetType();
+        return null;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        SetState(new RunState());
+        if (state == null)
+            SetState(new RunState());
     }
 
     // Update is called once per frame

@@ -82,6 +82,12 @@ public class GameMode : BaseGameMode
 
     public override void Stop()
     {
+        foreach(var unit in units)
+        {
+            var state = unit.GetComponent<StateMachine>();
+            if (state || state.GetStateType() != typeof(DeadState))
+                state.SetState(new DeadState());
+        }
         isActive = false;
     }
 

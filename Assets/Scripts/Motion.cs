@@ -6,7 +6,7 @@ public class Motion : MonoBehaviour
 {
     public float speed = 1.0F;
     public List<IMoveType> types = new List<IMoveType>();
-    public float changeChance = 0.5F;
+    private float changeTime = 0.5F;
 
     private IMoveType selected;
     private float counter = 0;
@@ -15,6 +15,7 @@ public class Motion : MonoBehaviour
     {
         if (types.Count > 0)
             selected = types[0];
+        changeTime = 0;
     }
 
     private void Update()
@@ -22,10 +23,11 @@ public class Motion : MonoBehaviour
         if (types.Count <= 0)
             return;
         counter += Time.deltaTime;
-        if (counter > 2.0F && changeChance > Random.Range(0.0F, 1.0F))
+        if (counter > changeTime)
         {
             selected = types[Random.Range(0, types.Count)];
-            counter -= 2.0F;
+            counter -= changeTime;
+            changeTime = Random.Range(0.0F, 4.0F);
         }
         selected.Move(speed, transform);
     }
