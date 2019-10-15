@@ -37,6 +37,9 @@ public class GameMode : BaseGameMode
     public override void StartRulesCheck()
     {
         isActive = true;
+        outCount = 0;
+        friendlyKillCount = 0;
+        enemyKillCount = 0;
     }
 
     private void Update()
@@ -46,7 +49,7 @@ public class GameMode : BaseGameMode
         
         if (friendlyKillCount > friendlyKillLimit)
         {
-            InvokeGameOver(this, new EventArgs());
+            InvokeGameOver(this, new GameOverEventArgs(enemyKillCount));
             Stop();
             return;
         }
@@ -65,7 +68,7 @@ public class GameMode : BaseGameMode
                     outCount++;
                 if (outCount > outLimit)
                 {
-                    InvokeGameOver(this, new EventArgs());
+                    InvokeGameOver(this, new GameOverEventArgs(enemyKillCount));
                     Stop();
                     break;
                 }

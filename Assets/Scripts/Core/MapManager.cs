@@ -32,14 +32,14 @@ public class MapManager : MonoBehaviour, IMapManager
         builders.Add(new ATypeBuiler());
         builders.Add(new BTypeBuiler());
         builders.Add(new CTypeBuiler());
-        currentSpeed = generationSpeed;
-        generationCounter = 1 / currentSpeed;
     }
 
     public void StartGeneration()
     {
         isActive = true;
         mapGC?.StartCollecting(units);
+        currentSpeed = generationSpeed;
+        generationCounter = 1 / currentSpeed;
     }
     
     void Update()

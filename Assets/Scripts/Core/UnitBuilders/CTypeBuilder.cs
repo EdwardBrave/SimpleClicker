@@ -6,6 +6,6 @@ public class CTypeBuiler : IUnitBuilder
     {
         new BTypeBuiler().BuildUnit(unit, constructor);
         unit.GetComponent<MaterialPainter>().Green();
-        unit.AddComponent<StateMachine>().unitType = StateMachine.UnitTypes.Friendly;
+        unit.GetComponent<StateMachine>().unitType = StateMachine.UnitTypes.Friendly;
     }
 }
