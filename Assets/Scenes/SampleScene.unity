@@ -960,7 +960,7 @@ MonoBehaviour:
   mode: {fileID: 1451424503}
   userInterface: {fileID: 1232637673}
   scorePanel: {fileID: 311715885}
-  scoreField: {fileID: 1682974807}
+  scoreField: {fileID: 696685459}
 --- !u!4 &1451424505
 Transform:
   m_ObjectHideFlags: 0
